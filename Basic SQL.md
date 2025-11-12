@@ -3,18 +3,16 @@
 ### LIMIT
 
 ### WHERE
-- logic operators (>, < !=, =, <=, >=)
-- note, apparently we can use > on type strings, for alphabetical comparison
-	- in SQL, “Ja” > “J”
+
+### logic operators (>, < !=, =, <=, >=)
+- note, apparently we can use > on type strings, for alphabetical comparison: in SQL, “Ja” > “J”
 ```sql
-    SELECT *
-      FROM tutorial.us_housing_units
-     WHERE month_name > 'J';
-    ```
-    
+SELECT *
+FROM tutorial.us_housing_units
+WHERE month_name > 'J';
+```
 ### Arithmetic
 - you can only add/subtract/multiply/divide values in multiple columns _from the same row_ together
-
 ### Logical Operators
 - [**`LIKE`**](https://mode.com/sql-tutorial/sql-like) allows you to match similar values, instead of exact values. `ILIKE` is the case sensitive version    
 - `%` is wildcard, _ is any character
@@ -62,45 +60,42 @@ WHERE artist = NULL
         
 - [**`AND`**](https://mode.com/sql-tutorial/sql-and-operator) allows you to select only rows that satisfy two conditions.
 ```sql
-        SELECT *
-          FROM tutorial.billboard_top_100_year_end
-         WHERE year = 2012
-           AND year_rank <= 10
-           AND "group_name" ILIKE '%feat%'
+SELECT *
+FROM tutorial.billboard_top_100_year_end
+WHERE year = 2012
+AND year_rank <= 10
+AND "group_name" ILIKE '%feat%'
 ```
         
 - [**`OR`**](https://mode.com/sql-tutorial/sql-or-operator) allows you to select rows that satisfy either of two conditions.
 ```sql
-        SELECT *
-          FROM tutorial.billboard_top_100_year_end
-         WHERE year = 2013
-           AND ("group_name" ILIKE '%macklemore%' OR "group_name" ILIKE '%timberlake%')
+SELECT *
+FROM tutorial.billboard_top_100_year_end
+WHERE year = 2013
+AND ("group_name" ILIKE '%macklemore%' OR "group_name" ILIKE '%timberlake%')
 ```
         
 - [**`NOT`**](https://mode.com/sql-tutorial/sql-not-operator) allows you to select rows that do not match a certain condition.
 ```sql
-        SELECT *
-          FROM tutorial.billboard_top_100_year_end
-         WHERE year = 2013
-           AND "group_name" NOT ILIKE '%macklemore%'
+SELECT *
+FROM tutorial.billboard_top_100_year_end
+WHERE year = 2013
+AND "group_name" NOT ILIKE '%macklemore%'
 ```
-        
+
 - `ORDER BY`
-    
-    - First order by year, then order by year_rank
-    - ORDER BY is executed before
-    
-    ```sql
-    SELECT *
-      FROM tutorial.billboard_top_100_year_end
-      WHERE year_rank <= 3
-     ORDER BY year DESC, year_rank
-    ```
-    
+	- First order by year, then order by year_rank
+	- ORDER BY is executed before
+
+```sql
+SELECT *
+  FROM tutorial.billboard_top_100_year_end
+  WHERE year_rank <= 3
+ ORDER BY year DESC, year_rank
+```
 - Comments
-    
-    ```sql
-    SELECT *  --This comment won't affect the way the code runs
-      FROM tutorial.billboard_top_100_year_end
-     WHERE year = 2013
-    ```
+```sql
+SELECT *  --This comment won't affect the way the code runs
+  FROM tutorial.billboard_top_100_year_end
+ WHERE year = 2013
+```

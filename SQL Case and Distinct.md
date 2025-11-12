@@ -88,3 +88,14 @@ COUNT(CASE WHEN year = 'SO' THEN 1 ELSE NULL END) AS so_count,
 COUNT(CASE WHEN year = 'JR' THEN 1 ELSE NULL END) AS jr_count,
 COUNT(CASE WHEN year = 'SR' THEN 1 ELSE NULL END) AS sr_count
 FROM benn.college_football_players
+```
+### DISTINCT
+- Used to get distinct values, helpful when exploring new data sets
+```sql
+/*unique pairs of <year, month>*/
+SELECT DISTINCT year, month FROM tutorial.aapl_historical_stock_price
+```
+- We can use distinct when performing [[SQL Aggregates]]
+```sql
+SELECT COUNT(DISTINCT month) AS unique_months FROM tutorial.aapl_historical_stock_price
+```
