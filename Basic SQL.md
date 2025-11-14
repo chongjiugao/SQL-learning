@@ -99,3 +99,6 @@ SELECT *  --This comment won't affect the way the code runs
   FROM tutorial.billboard_top_100_year_end
  WHERE year = 2013
 ```
+- BETWEEN
+
+more on logical operators: https://www.w3schools.com/sql/sql_operators.asp

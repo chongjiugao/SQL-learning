@@ -95,4 +95,25 @@ FULL JOIN tutorial.crunchbase_acquisitions acquisitions
 ON companies.permalink = acquisitions.company_permalink
 ```
 
+### SQL Self Join
+- A join statement, where the table is joined with itself
+```sql
+SELECT A.CustomerName AS CustomerName1, B.CustomerName AS CustomerName2, A.City  
+FROM Customers A, Customers B  
+WHERE A.CustomerID <> B.CustomerID  
+AND A.City = B.City  
+ORDER BY A.City;
+```
+
 ### SQL UNION
+https://www.w3schools.com/sql/sql_union.asp
+- UNION: will only selects unique values
+- UNION ALL: will keep duplicates
+```sql
+SELECT City, Country FROM Customers  
+WHERE Country='Germany'  
+UNION  
+SELECT City, Country FROM Suppliers  
+WHERE Country='Germany'  
+ORDER BY City;
+```
