@@ -109,6 +109,7 @@ ORDER BY A.City;
 https://www.w3schools.com/sql/sql_union.asp
 - UNION: will only selects unique values
 - UNION ALL: will keep duplicates
+- the data types of both columns must be the same, but the column names can be different
 ```sql
 SELECT City, Country FROM Customers  
 WHERE Country='Germany'  
